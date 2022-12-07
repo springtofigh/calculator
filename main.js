@@ -1,5 +1,5 @@
 // VARIABLES
-let displayBox = document.querySelector(".display");
+let displayBox = document.querySelector(".inner-display");
 let list = document.querySelectorAll(".show-display");
 
 
@@ -7,34 +7,30 @@ let list = document.querySelectorAll(".show-display");
 function showDisplay(event) {
 
     const x = event.target.innerText
-    if (displayBox.innerHTML == 0) {
-        return displayBox.innerHTML = x;
+    if (displayBox.value == 0 ) {
+        return displayBox.value = x;
     }
-    let limit = displayBox.innerText; 
-    if (limit.length > 9 ) {
-        
-    }
-    return displayBox.innerHTML += x;
+    return displayBox.value += x;
 }
 
 // RESULT FUNCTION
 function calculate() {
-    let resulte = displayBox.innerText;
-    displayBox.innerText = eval(resulte);
+    let resulte = displayBox.value;
+    displayBox.value = eval(resulte);
 }
 
 // CLEAR ALL NUMBERS
 function allClear() {
-    displayBox.innerText = 0;
+    displayBox.value = 0;
 }
 
 // ONE BY ONE CLEAR NUMBER 
 function clear() {
-    let text = displayBox.innerText;
+    let text = displayBox.value;
     if (text.length === 1) {
-        displayBox.innerText = 0;
+        displayBox.value = 0;
     } else {
-        displayBox.innerText = text.substring(0 , text.length - 1)
+        displayBox.value = text.substring(0 , text.length - 1)
     }
 }
 
